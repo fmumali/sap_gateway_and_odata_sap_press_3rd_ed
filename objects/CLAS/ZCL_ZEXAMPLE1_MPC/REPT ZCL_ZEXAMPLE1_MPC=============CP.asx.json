@@ -1,0 +1,22 @@
+[
+ {
+  "table":"TEXTPOOLT",
+  "data":
+  [
+   {
+    "ID":"I",
+    "KEY":"001",
+    "LANG":"E",
+    "ENTRY":"Supplier ID",
+    "LENGTH":132
+   },
+   {
+    "ID":"I",
+    "KEY":"002",
+    "LANG":"E",
+    "ENTRY":"Supplier  Name",
+    "LENGTH":132
+   }
+  ]
+ }
+]
