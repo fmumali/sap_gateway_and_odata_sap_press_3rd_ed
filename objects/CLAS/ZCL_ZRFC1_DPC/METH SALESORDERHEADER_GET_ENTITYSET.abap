@@ -22,10 +22,10 @@
  DATA ls_converted_keys LIKE LINE OF et_entityset.
  DATA ls_filter TYPE /iwbep/s_mgw_select_option.
  DATA ls_filter_range TYPE /iwbep/s_cod_select_option.
- DATA lr_buyer_name LIKE RANGE OF ls_converted_keys-buyer_name.
- DATA ls_buyer_name LIKE LINE OF lr_buyer_name.
  DATA lr_so_id LIKE RANGE OF ls_converted_keys-so_id.
  DATA ls_so_id LIKE LINE OF lr_so_id.
+ DATA lr_buyer_name LIKE RANGE OF ls_converted_keys-buyer_name.
+ DATA ls_buyer_name LIKE LINE OF lr_buyer_name.
  DATA lo_dp_facade TYPE REF TO /iwbep/if_mgw_dp_facade.
  DATA ls_gw_soheaderdata LIKE LINE OF et_entityset.
  DATA lv_skip     TYPE int4.
@@ -72,20 +72,6 @@
 
    LOOP AT ls_filter-select_options INTO ls_filter_range.
      CASE ls_filter-property.
-       WHEN 'BUYER_NAME'.              " Equivalent to 'BuyerName' property in the service
-         lo_filter->convert_select_option(
-           EXPORTING
-             is_select_option = ls_filter
-           IMPORTING
-             et_select_option = lr_buyer_name ).
-
-         LOOP AT lr_buyer_name INTO ls_buyer_name.
-           ls_selparambuyername-sign = ls_buyer_name-sign.
-           ls_selparambuyername-option = ls_buyer_name-option.
-           ls_selparambuyername-low = ls_buyer_name-low.
-           ls_selparambuyername-high = ls_buyer_name-high.
-           APPEND ls_selparambuyername TO selparambuyername.
-         ENDLOOP.
        WHEN 'SO_ID'.              " Equivalent to 'SoId' property in the service
          lo_filter->convert_select_option(
            EXPORTING
@@ -94,11 +80,25 @@
              et_select_option = lr_so_id ).
 
          LOOP AT lr_so_id INTO ls_so_id.
-           ls_selparamsoid-sign = ls_so_id-sign.
-           ls_selparamsoid-option = ls_so_id-option.
-           ls_selparamsoid-low = ls_so_id-low.
            ls_selparamsoid-high = ls_so_id-high.
+           ls_selparamsoid-low = ls_so_id-low.
+           ls_selparamsoid-option = ls_so_id-option.
+           ls_selparamsoid-sign = ls_so_id-sign.
            APPEND ls_selparamsoid TO selparamsoid.
+         ENDLOOP.
+       WHEN 'BUYER_NAME'.              " Equivalent to 'BuyerName' property in the service
+         lo_filter->convert_select_option(
+           EXPORTING
+             is_select_option = ls_filter
+           IMPORTING
+             et_select_option = lr_buyer_name ).
+
+         LOOP AT lr_buyer_name INTO ls_buyer_name.
+           ls_selparambuyername-high = ls_buyer_name-high.
+           ls_selparambuyername-low = ls_buyer_name-low.
+           ls_selparambuyername-option = ls_buyer_name-option.
+           ls_selparambuyername-sign = ls_buyer_name-sign.
+           APPEND ls_selparambuyername TO selparambuyername.
          ENDLOOP.
 
        WHEN OTHERS.
@@ -134,8 +134,8 @@
          TABLES
            return            = return
            soheaderdata      = soheaderdata
-           selparambuyername = selparambuyername
            selparamsoid      = selparamsoid
+           selparambuyername = selparambuyername
          EXCEPTIONS
            system_failure    = 1000 message lv_exc_msg
            OTHERS            = 1002.
@@ -153,8 +153,8 @@
      TABLES
        return                = return
        soheaderdata          = soheaderdata
-       selparambuyername     = selparambuyername
        selparamsoid          = selparamsoid
+       selparambuyername     = selparambuyername
      EXCEPTIONS
        system_failure        = 1000 MESSAGE lv_exc_msg
        communication_failure = 1001 MESSAGE lv_exc_msg
@@ -214,26 +214,26 @@
 *  Provide the response entries according to the Top and Skip parameters that were provided at runtime
       FROM lv_skip TO lv_top.
 *  Only fields that were mapped will be delivered to the response table
-   ls_gw_soheaderdata-delivery_status = ls_soheaderdata-delivery_status.
-   ls_gw_soheaderdata-billing_status = ls_soheaderdata-billing_status.
-   ls_gw_soheaderdata-lifecycle_status = ls_soheaderdata-lifecycle_status.
-   ls_gw_soheaderdata-tax_amount_ext = ls_soheaderdata-tax_amount_ext.
-   ls_gw_soheaderdata-tax_amount = ls_soheaderdata-tax_amount.
-   ls_gw_soheaderdata-net_amount_ext = ls_soheaderdata-net_amount_ext.
-   ls_gw_soheaderdata-net_amount = ls_soheaderdata-net_amount.
-   ls_gw_soheaderdata-gross_amount_ext = ls_soheaderdata-gross_amount_ext.
-   ls_gw_soheaderdata-gross_amount = ls_soheaderdata-gross_amount.
-   ls_gw_soheaderdata-currency_code = ls_soheaderdata-currency_code.
-   ls_gw_soheaderdata-buyer_name = ls_soheaderdata-buyer_name.
-   ls_gw_soheaderdata-buyer_id = ls_soheaderdata-buyer_id.
-   ls_gw_soheaderdata-note = ls_soheaderdata-note.
-   ls_gw_soheaderdata-changed_by_bp = ls_soheaderdata-changed_by_bp.
-   ls_gw_soheaderdata-created_by_bp = ls_soheaderdata-created_by_bp.
-   ls_gw_soheaderdata-changed_at = ls_soheaderdata-changed_at.
-   ls_gw_soheaderdata-changed_by = ls_soheaderdata-changed_by.
-   ls_gw_soheaderdata-created_at = ls_soheaderdata-created_at.
-   ls_gw_soheaderdata-created_by = ls_soheaderdata-created_by.
    ls_gw_soheaderdata-so_id = ls_soheaderdata-so_id.
+   ls_gw_soheaderdata-created_by = ls_soheaderdata-created_by.
+   ls_gw_soheaderdata-created_at = ls_soheaderdata-created_at.
+   ls_gw_soheaderdata-changed_by = ls_soheaderdata-changed_by.
+   ls_gw_soheaderdata-changed_at = ls_soheaderdata-changed_at.
+   ls_gw_soheaderdata-created_by_bp = ls_soheaderdata-created_by_bp.
+   ls_gw_soheaderdata-changed_by_bp = ls_soheaderdata-changed_by_bp.
+   ls_gw_soheaderdata-note = ls_soheaderdata-note.
+   ls_gw_soheaderdata-buyer_id = ls_soheaderdata-buyer_id.
+   ls_gw_soheaderdata-buyer_name = ls_soheaderdata-buyer_name.
+   ls_gw_soheaderdata-currency_code = ls_soheaderdata-currency_code.
+   ls_gw_soheaderdata-gross_amount = ls_soheaderdata-gross_amount.
+   ls_gw_soheaderdata-gross_amount_ext = ls_soheaderdata-gross_amount_ext.
+   ls_gw_soheaderdata-net_amount = ls_soheaderdata-net_amount.
+   ls_gw_soheaderdata-net_amount_ext = ls_soheaderdata-net_amount_ext.
+   ls_gw_soheaderdata-tax_amount = ls_soheaderdata-tax_amount.
+   ls_gw_soheaderdata-tax_amount_ext = ls_soheaderdata-tax_amount_ext.
+   ls_gw_soheaderdata-lifecycle_status = ls_soheaderdata-lifecycle_status.
+   ls_gw_soheaderdata-billing_status = ls_soheaderdata-billing_status.
+   ls_gw_soheaderdata-delivery_status = ls_soheaderdata-delivery_status.
    APPEND ls_gw_soheaderdata TO et_entityset.
    CLEAR ls_gw_soheaderdata.
  ENDLOOP.

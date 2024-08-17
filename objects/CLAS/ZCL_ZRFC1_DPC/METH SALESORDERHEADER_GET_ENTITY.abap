@@ -115,24 +115,24 @@
 *-------------------------------------------------------------------------*
 * Map properties from the backend to the Gateway output response structure
 
- er_entity-delivery_status = headerdata-delivery_status.
- er_entity-billing_status = headerdata-billing_status.
- er_entity-lifecycle_status = headerdata-lifecycle_status.
- er_entity-tax_amount_ext = headerdata-tax_amount_ext.
- er_entity-tax_amount = headerdata-tax_amount.
- er_entity-net_amount_ext = headerdata-net_amount_ext.
- er_entity-net_amount = headerdata-net_amount.
- er_entity-gross_amount_ext = headerdata-gross_amount_ext.
- er_entity-gross_amount = headerdata-gross_amount.
- er_entity-currency_code = headerdata-currency_code.
- er_entity-buyer_name = headerdata-buyer_name.
- er_entity-buyer_id = headerdata-buyer_id.
- er_entity-note = headerdata-note.
- er_entity-changed_by_bp = headerdata-changed_by_bp.
- er_entity-created_by_bp = headerdata-created_by_bp.
- er_entity-changed_at = headerdata-changed_at.
- er_entity-changed_by = headerdata-changed_by.
- er_entity-created_at = headerdata-created_at.
- er_entity-created_by = headerdata-created_by.
  er_entity-so_id = headerdata-so_id.
+ er_entity-created_by = headerdata-created_by.
+ er_entity-created_at = headerdata-created_at.
+ er_entity-changed_by = headerdata-changed_by.
+ er_entity-changed_at = headerdata-changed_at.
+ er_entity-created_by_bp = headerdata-created_by_bp.
+ er_entity-changed_by_bp = headerdata-changed_by_bp.
+ er_entity-note = headerdata-note.
+ er_entity-buyer_id = headerdata-buyer_id.
+ er_entity-buyer_name = headerdata-buyer_name.
+ er_entity-currency_code = headerdata-currency_code.
+ er_entity-gross_amount = headerdata-gross_amount.
+ er_entity-gross_amount_ext = headerdata-gross_amount_ext.
+ er_entity-net_amount = headerdata-net_amount.
+ er_entity-net_amount_ext = headerdata-net_amount_ext.
+ er_entity-tax_amount = headerdata-tax_amount.
+ er_entity-tax_amount_ext = headerdata-tax_amount_ext.
+ er_entity-lifecycle_status = headerdata-lifecycle_status.
+ er_entity-billing_status = headerdata-billing_status.
+ er_entity-delivery_status = headerdata-delivery_status.
   endmethod.

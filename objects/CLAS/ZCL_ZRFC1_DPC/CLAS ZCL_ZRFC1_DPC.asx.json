@@ -17,7 +17,7 @@
    {
     "CLSNAME":"ZCL_ZRFC1_DPC",
     "CLSTYPE":0,
-    "UUID":"AkKsEQACHt+Xl3eB8lwIwg==",
+    "UUID":"AkKsEQACHt+XnUTl15tIwg==",
     "REMOTE":""
    }
   ]
@@ -5568,8 +5568,8 @@
     "CRELEASE":"",
     "DELFLAG":"",
     "TRANSLTTXT":"",
-    "CREATED_ON":"2024-08-15",
-    "CHECK_DATE":"2024-08-15",
+    "CREATED_ON":"2024-08-17",
+    "CHECK_DATE":"2024-08-17",
     "CHECK_CFG":""
    }
   ]
