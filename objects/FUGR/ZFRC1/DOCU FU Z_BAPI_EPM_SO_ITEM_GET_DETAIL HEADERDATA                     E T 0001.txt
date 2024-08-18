@@ -1,0 +1,6 @@
+U4 &MEANING&                                                               
+AS Sales Order header data                                                 
+U4 &RANGE&                                                                 
+AS                                                                         
+U4 &DEFAULT&                                                               
+AS                                                                         

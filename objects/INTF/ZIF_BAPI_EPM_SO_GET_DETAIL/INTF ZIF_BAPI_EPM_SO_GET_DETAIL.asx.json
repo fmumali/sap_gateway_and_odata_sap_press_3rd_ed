@@ -17,7 +17,7 @@
    {
     "CLSNAME":"ZIF_BAPI_EPM_SO_GET_DETAIL",
     "CLSTYPE":1,
-    "UUID":"AkKsEQACHt+XnUVFvdJowg==",
+    "UUID":"AkKsEQACHt+XsM8AM/Nowg==",
     "REMOTE":""
    }
   ]
@@ -38,7 +38,7 @@
     "CHANGEDBY":"",
     "CHANGEDON":"0000-00-00",
     "CHGDANYBY":"FMUMALI",
-    "CHGDANYON":"2024-08-17",
+    "CHGDANYON":"2024-08-18",
     "CLSEMBED":"",
     "CLSABSTRCT":"",
     "CLSFINAL":"",

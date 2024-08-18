@@ -1,0 +1,8 @@
+U4 &FUNCTIONALITY&                                                         
+AS Use this BAPI to retrieve EPM Sales Order data                          
+U4 &EXAMPLE&                                                               
+AS                                                                         
+U4 &HINTS&                                                                 
+AS                                                                         
+U4 &FURTHER_SOURCES_OF_INF&                                                
+AS                                                                         

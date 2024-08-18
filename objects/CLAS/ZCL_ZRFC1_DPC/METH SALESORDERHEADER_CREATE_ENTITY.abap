@@ -32,26 +32,26 @@
  io_data_provider->read_entry_data( IMPORTING es_data = ls_request_input_data ).
 
 * Map request input fields to function module parameters
- headerdata-created_by = ls_request_input_data-created_by.
- headerdata-created_at = ls_request_input_data-created_at.
- headerdata-changed_by = ls_request_input_data-changed_by.
- headerdata-changed_at = ls_request_input_data-changed_at.
- headerdata-created_by_bp = ls_request_input_data-created_by_bp.
- headerdata-changed_by_bp = ls_request_input_data-changed_by_bp.
- headerdata-note = ls_request_input_data-note.
- headerdata-buyer_id = ls_request_input_data-buyer_id.
- headerdata-buyer_name = ls_request_input_data-buyer_name.
- headerdata-currency_code = ls_request_input_data-currency_code.
- headerdata-gross_amount = ls_request_input_data-gross_amount.
- headerdata-gross_amount_ext = ls_request_input_data-gross_amount_ext.
- headerdata-net_amount = ls_request_input_data-net_amount.
- headerdata-net_amount_ext = ls_request_input_data-net_amount_ext.
- headerdata-tax_amount = ls_request_input_data-tax_amount.
- headerdata-tax_amount_ext = ls_request_input_data-tax_amount_ext.
- headerdata-lifecycle_status = ls_request_input_data-lifecycle_status.
- headerdata-billing_status = ls_request_input_data-billing_status.
- headerdata-delivery_status = ls_request_input_data-delivery_status.
  headerdata-so_id = ls_request_input_data-so_id.
+ headerdata-delivery_status = ls_request_input_data-delivery_status.
+ headerdata-billing_status = ls_request_input_data-billing_status.
+ headerdata-lifecycle_status = ls_request_input_data-lifecycle_status.
+ headerdata-tax_amount_ext = ls_request_input_data-tax_amount_ext.
+ headerdata-tax_amount = ls_request_input_data-tax_amount.
+ headerdata-net_amount_ext = ls_request_input_data-net_amount_ext.
+ headerdata-net_amount = ls_request_input_data-net_amount.
+ headerdata-gross_amount_ext = ls_request_input_data-gross_amount_ext.
+ headerdata-gross_amount = ls_request_input_data-gross_amount.
+ headerdata-currency_code = ls_request_input_data-currency_code.
+ headerdata-buyer_name = ls_request_input_data-buyer_name.
+ headerdata-buyer_id = ls_request_input_data-buyer_id.
+ headerdata-note = ls_request_input_data-note.
+ headerdata-changed_by_bp = ls_request_input_data-changed_by_bp.
+ headerdata-created_by_bp = ls_request_input_data-created_by_bp.
+ headerdata-changed_at = ls_request_input_data-changed_at.
+ headerdata-changed_by = ls_request_input_data-changed_by.
+ headerdata-created_at = ls_request_input_data-created_at.
+ headerdata-created_by = ls_request_input_data-created_by.
 
 * Get RFC destination
  lo_dp_facade = /iwbep/if_mgw_conv_srv_runtime~get_dp_facade( ).
